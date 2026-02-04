@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+  <id>com.github.theokam57.LibrePaint</id>
+  <name>LibrePaint</name>
+  <summary>Open-source paint application for Linux</summary>
+  <developer_name>theokam57 and contributors</developer_name>
+  <description>
+    <p>LibrePaint to lekki, open-source edytor graficzny inspirowany Paint.NET, dostępny na Linux, Windows i macOS.</p>
+    <p>Funkcje:</p>
+    <ul>
+      <li>Rysowanie pędzlem, wypełnianie, tekst</li>
+      <li>Wsparcie dla warstw (w planach)</li>
+      <li>Efekty i filtry (w planach)</li>
+      <li>Pełna integracja z środowiskiem Linux</li>
+    </ul>
+  </description>
+  <launchable type="desktop-id">com.github.theokam57.LibrePaint.desktop</launchable>
+  <url type="homepage">https://github.com/theokam57/LibrePaint</url>
+  <url type="bugtracker">https://github.com/theokam57/LibrePaint/issues</url>
+  <project_license>Beerware</project_license>
+  <content_rating type="oars-1.1" />
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/theokam57/LibrePaint/main/assets/screenshots/main-window.png</image>
+    </screenshot>
+  </screenshots>
+  <releases>
+    <release version="0.1.0" date="2026-02-05">
+      <description>
+        <p>Pierwsze wydanie publiczne</p>
+      </description>
+    </release>
+  </releases>
+</component>

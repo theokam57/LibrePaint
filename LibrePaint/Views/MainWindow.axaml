@@ -1,0 +1,52 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="LibrePaint.Views.MainWindow"
+        Title="{Binding WindowTitle}"
+        Width="1200"
+        Height="800"
+        MinWidth="800"
+        MinHeight="600"
+        Icon="/Assets/icons/libre-paint.png">
+  
+  <DockPanel>
+    <Border DockPanel.Dock="Top" Background="#f0f0f0" Padding="5">
+      <StackPanel Orientation="Horizontal" Spacing="8">
+        <Button Content="Nowy" Command="{Binding NewCommand}" Width="70" />
+        <Button Content="Otwórz" Command="{Binding OpenCommand}" Width="80" />
+        <Button Content="Zapisz" Command="{Binding SaveCommand}" Width="70" />
+        <Button Content="Zapisz jako..." Command="{Binding SaveAsCommand}" Width="100" />
+        <Separator Orientation="Vertical" Height="24" Margin="10,0" />
+        <TextBlock Text="Narzędzie:" VerticalAlignment="Center" Margin="0,0,5,0" />
+        <ComboBox SelectedItem="{Binding SelectedTool}" Width="110" VerticalAlignment="Center">
+          <ComboBoxItem Content="Pędzel" />
+          <ComboBoxItem Content="Wypełnienie" IsEnabled="False" />
+          <ComboBoxItem Content="Tekst" IsEnabled="False" />
+          <ComboBoxItem Content="Wybór" IsEnabled="False" />
+        </ComboBox>
+        <Separator Orientation="Vertical" Height="24" Margin="10,0" />
+        <TextBlock Text="Grubość:" VerticalAlignment="Center" Margin="0,0,5,0" />
+        <Slider Minimum="1" Maximum="100" Value="{Binding BrushSize}" Width="100" VerticalAlignment="Center" />
+        <TextBlock Text="{Binding BrushSize, StringFormat={}{0:F0}}" Width="25" VerticalAlignment="Center" TextAlignment="Center" Margin="5,0,0,0" />
+        <Separator Orientation="Vertical" Height="24" Margin="10,0" />
+        <TextBlock Text="Kolor:" VerticalAlignment="Center" Margin="0,0,5,0" />
+        <Button Width="36" Height="28" Background="{Binding CurrentColor}" BorderBrush="Gray" BorderThickness="1" Command="{Binding PickColorCommand}" />
+      </StackPanel>
+    </Border>
+    
+    <Border DockPanel.Dock="Bottom" Background="#f0f0f0" Padding="10,4">
+      <TextBlock Text="{Binding StatusMessage}" FontStyle="Italic" Foreground="#555" />
+    </Border>
+    
+    <Border Background="#e0e0e0" Margin="10" CornerRadius="4" BorderBrush="#aaa" BorderThickness="1">
+      <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+        <Canvas x:Name="DrawingCanvas" Width="800" Height="600" Background="White"
+                PointerPressed="DrawingCanvas_PointerPressed"
+                PointerMoved="DrawingCanvas_PointerMoved"
+                PointerReleased="DrawingCanvas_PointerReleased"
+                PointerExited="DrawingCanvas_PointerExited">
+          <Image Source="{Binding CanvasBitmap}" Stretch="None" />
+        </Canvas>
+      </ScrollViewer>
+    </Border>
+  </DockPanel>
+</Window>

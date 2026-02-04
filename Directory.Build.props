@@ -1,0 +1,15 @@
+<Project>
+  <PropertyGroup>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Authors>theokam57</Authors>
+    <Company>LibrePaint Contributors</Company>
+    <Product>LibrePaint</Product>
+    <Description>Open-source paint application for Linux, Windows and macOS</Description>
+    <PackageLicenseExpression>Beerware</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/theokam57/LibrePaint</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+</Project>
